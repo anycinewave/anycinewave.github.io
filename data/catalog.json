@@ -1,0 +1,138 @@
+[
+  {
+    "id": "os-escolhidos",
+    "title": "Os Escolhidos",
+    "type": "filme",
+    "year": 2013,
+    "genres": ["Terror", "Ficção científica"],
+    "desc": "Uma família começa a vivenciar acontecimentos sobrenaturais e precisa descobrir o que está acontecendo.",
+    "url": "https://www.primevideo.com/-/pt/detail/0JP4HUHQDF8527NMR1E7YK31LV?tr=cl",
+    "color": "#4c356c"
+  },
+  {
+    "id": "um-grude-de-amor",
+    "title": "Um Grude de Amor",
+    "type": "serie",
+    "year": 2026,
+    "genres": ["Romance", "Comédia", "Drama"],
+    "desc": "Uma história romântica em formato de série com 12 episódios.",
+    "url": "https://www.netflix.com/br/title/82048302",
+    "color": "#9b4d75",
+    "episodes": [
+      {"season": 1, "ep": 1, "title": "Episódio 1", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 2, "title": "Episódio 2", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 3, "title": "Episódio 3", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 4, "title": "Episódio 4", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 5, "title": "Episódio 5", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 6, "title": "Episódio 6", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 7, "title": "Episódio 7", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 8, "title": "Episódio 8", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 9, "title": "Episódio 9", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 10, "title": "Episódio 10", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 11, "title": "Episódio 11", "url": "https://www.netflix.com/br/title/82048302"},
+      {"season": 1, "ep": 12, "title": "Episódio 12", "url": "https://www.netflix.com/br/title/82048302"}
+    ]
+  },
+  {
+    "id": "o-bad-boy-e-eu",
+    "title": "O Bad Boy e Eu",
+    "type": "filme",
+    "year": 2024,
+    "genres": ["Romance", "Drama"],
+    "desc": "Uma história de romance entre uma jovem determinada e um jogador de futebol americano.",
+    "url": "https://br.justwatch.com/br/filme/sidelined-the-qb-and-me",
+    "color": "#355c7d"
+  },
+  {
+    "id": "o-bad-boy-e-eu-2",
+    "title": "O Bad Boy e Eu 2",
+    "type": "filme",
+    "year": 2025,
+    "genres": ["Romance", "Drama"],
+    "desc": "Continuação da história de Sidelined: The QB and Me.",
+    "url": "https://br.justwatch.com/br/filme/outro-amor-fora-do-tempo",
+    "color": "#6c5b7b"
+  },
+  {
+    "id": "uma-noite-de-crime",
+    "title": "Uma Noite de Crime",
+    "type": "filme",
+    "year": 2013,
+    "genres": ["Terror", "Suspense"],
+    "desc": "Durante uma noite em que todos os crimes são permitidos, uma família tenta sobreviver.",
+    "url": "https://br.justwatch.com/br/filme/the-purge",
+    "color": "#6b1e1e"
+  },
+  {
+    "id": "uma-noite-de-crime-anarquia",
+    "title": "A Purga: Anarquia",
+    "type": "filme",
+    "year": 2014,
+    "genres": ["Terror", "Ação", "Suspense"],
+    "desc": "Um grupo tenta sobreviver às ruas durante uma nova noite de expurgo.",
+    "url": "https://br.justwatch.com/br/filme/the-purge-anarchy",
+    "color": "#7a2e2e"
+  },
+  {
+    "id": "uma-noite-de-crime-ano-de-eleicoes",
+    "title": "A Purga: Ano de Eleições",
+    "type": "filme",
+    "year": 2016,
+    "genres": ["Terror", "Ação", "Suspense"],
+    "desc": "Uma candidata luta para sobreviver enquanto tenta acabar com a tradição da Purga.",
+    "url": "https://br.justwatch.com/br/filme/the-purge-election-year",
+    "color": "#4d3b3b"
+  },
+  {
+    "id": "a-primeira-purga",
+    "title": "A Primeira Purga",
+    "type": "filme",
+    "year": 2018,
+    "genres": ["Terror", "Ação", "Suspense"],
+    "desc": "A origem da noite anual em que todos os crimes são permitidos.",
+    "url": "https://br.justwatch.com/br/filme/a-purga-inicio",
+    "color": "#593434"
+  },
+  {
+    "id": "uma-noite-de-crime-adeus-america",
+    "title": "A Purga: Adeus América",
+    "type": "filme",
+    "year": 2021,
+    "genres": ["Terror", "Ação", "Suspense"],
+    "desc": "Uma nova ameaça surge quando a Purga ultrapassa os limites de sua noite tradicional.",
+    "url": "https://br.justwatch.com/br/filme/the-forever-purge",
+    "color": "#3d3030"
+  },
+  {
+    "id": "maze-runner-correr-ou-morrer",
+    "title": "Maze Runner: Correr ou Morrer",
+    "type": "filme",
+    "year": 2014,
+    "genres": ["Ação", "Ficção científica", "Aventura"],
+    "desc": "Um jovem acorda em um labirinto misterioso sem lembrar como chegou lá.",
+    "url": "https://br.justwatch.com/br/filme/maze-runner-correr-ou-morrer",
+    "color": "#315b45"
+  },
+  {
+    "id": "maze-runner-prova-de-fogo",
+    "title": "Maze Runner: Prova de Fogo",
+    "type": "filme",
+    "year": 2015,
+    "genres": ["Ação", "Ficção científica", "Aventura"],
+    "desc": "Depois de escapar do labirinto, os Clareanos enfrentam uma nova ameaça.",
+    "url": "https://br.justwatch.com/br/filme/maze-runner-prova-de-fogo",
+    "color": "#765b32"
+  },
+  {
+    
+  "id": "maze-runner-a-cura-mortal",
+  "title": "Maze Runner: A Cura Mortal",
+  "type": "filme",
+  "year": 2018,
+  "genres": ["Ação", "Ficção científica", "Aventura"],
+  "desc": "Thomas e seus amigos enfrentam novos perigos em busca da cura.",
+  "url": "https://br.justwatch.com/br/filme/maze-runner-a-cura-mortal",
+  "color": "#394d59"
+}
+]
+  
