@@ -1,0 +1,110 @@
+[
+  {
+    "id": "m1",
+    "title": "A Viagem à Lua",
+    "type": "filme",
+    "year": 1902,
+    "genres": [
+      "Clássico"
+    ],
+    "desc": "Clássico pioneiro do cinema. Use uma fonte cuja situação de direitos permita a publicação no seu território.",
+    "url": "https://archive.org/details/LeVoyageDansLaLune",
+    "color": "#4c356c"
+  },
+  {
+    "id": "m2",
+    "title": "The General",
+    "type": "filme",
+    "year": 1926,
+    "genres": [
+      "Clássico",
+      "Comédia"
+    ],
+    "desc": "Clássico de Buster Keaton. Confirme a situação de direitos e os termos da fonte antes de redistribuir ou incorporar.",
+    "url": "https://archive.org/details/the-general-1926",
+    "color": "#65443d"
+  },
+  {
+    "id": "m3",
+    "title": "Big Buck Bunny",
+    "type": "filme",
+    "year": 2008,
+    "genres": [
+      "Animação"
+    ],
+    "desc": "Animação do Blender distribuída sob licença Creative Commons. Verifique os termos da licença para a forma de uso desejada.",
+    "url": "https://peach.blender.org/",
+    "color": "#3d634a"
+  },
+  {
+    "id": "m4",
+    "title": "Elephants Dream",
+    "type": "filme",
+    "year": 2006,
+    "genres": [
+      "Animação"
+    ],
+    "desc": "Projeto de animação do Blender lançado como conteúdo aberto. Confira a licença antes de republicar.",
+    "url": "https://orange.blender.org/",
+    "color": "#765239"
+  },
+  {
+    "id": "s1",
+    "title": "Minha Série Livre",
+    "type": "serie",
+    "year": 2026,
+    "genres": [
+      "Série"
+    ],
+    "desc": "Modelo para cadastrar uma série própria ou licenciada.",
+    "url": "",
+    "color": "#3b4e78",
+    "episodes": [
+      {
+        "season": 1,
+        "ep": 1,
+        "title": "Piloto",
+        "url": ""
+      },
+      {
+        "season": 1,
+        "ep": 2,
+        "title": "O começo",
+        "url": ""
+      },
+      {
+        "season": 2,
+        "ep": 1,
+        "title": "Novo capítulo",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "id": "s2",
+    "title": "Série de Demonstração",
+    "type": "serie",
+    "year": 2026,
+    "genres": [
+      "Série",
+      "Animação"
+    ],
+    "desc": "Exemplo de estrutura de temporadas e episódios.",
+    "url": "",
+    "color": "#64456e",
+    "episodes": [
+      {
+        "season": 1,
+        "ep": 1,
+        "title": "Episódio 1",
+        "url": ""
+      },
+      {
+        "season": 1,
+        "ep": 2,
+        "title": "Episódio 2",
+        "url": ""
+      }
+    ]
+  }
+]
