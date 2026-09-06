@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="CineWave 2.0 — catálogo de filmes e séries licenciados, de domínio público ou de acesso autorizado.">
+<title>CineWave 2.0</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#home">Cine<span>Wave</span></a>
+  <nav><a href="#home">Início</a><a href="#movies">Filmes</a><a href="#series">Séries</a><a href="#favorites">♡ Favoritos</a></nav>
+  <button id="searchOpen" class="round">⌕</button><button id="theme" class="round">☼</button>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="hero-copy">
+  <span class="pill">CINEWAVE ORIGINAL • 2.0</span>
+  <h1>Seu próximo<br><em>filme favorito.</em></h1>
+  <p>Descubra conteúdos que você pode assistir de forma autorizada, com uma experiência inspirada nas grandes plataformas de streaming.</p>
+  <div><button class="cta" id="heroWatch">▶ Explorar</button><button class="ghost" id="heroInfo">ⓘ Como funciona</button></div>
+ </div>
+</section>
+
+<section class="section" id="movies"><div class="section-head"><div><small>CATÁLOGO</small><h2>Filmes em destaque</h2></div><button class="see" data-jump="filme">Ver todos →</button></div><div class="rail" id="movieRail"></div></section>
+<section class="section"><div class="section-head"><div><small>PARA DESCOBRIR</small><h2>Por categoria</h2></div></div><div class="chips" id="chips"></div></section>
+<section class="section" id="series"><div class="section-head"><div><small>EPISÓDIOS</small><h2>Séries</h2></div><button class="see" data-jump="serie">Ver todas →</button></div><div class="rail" id="seriesRail"></div></section>
+<section class="section" id="favorites"><div class="section-head"><div><small>SUA LISTA</small><h2>Favoritos</h2></div></div><div class="rail" id="favRail"></div><p class="muted" id="noFav">Você ainda não adicionou favoritos.</p></section>
+<section class="about"><div><small>IMPORTANTE</small><h2>Um catálogo feito para conteúdos autorizados.</h2></div><p>O CineWave é uma interface estática. Use somente vídeos, capas e informações que você tenha autorização para publicar, conteúdo de domínio público ou licenças compatíveis. O site não fornece cópias não autorizadas de filmes ou séries.</p></section>
+</main>
+
+<div class="search-panel" id="searchPanel"><div class="search-inner"><button id="searchClose">×</button><input id="search" autofocus placeholder="Pesquisar filmes e séries..."><div id="results"></div></div></div>
+
+<div class="modal" id="modal"><div class="backdrop"></div><article class="detail">
+<button class="close" id="close">×</button><div class="detail-poster" id="detailPoster"></div>
+<div class="detail-copy"><small id="detailType"></small><h2 id="detailTitle"></h2><div class="meta" id="detailMeta"></div><p id="detailDesc"></p><div class="actions"><button class="cta" id="watch">▶ Assistir</button><button class="ghost" id="fav">♡ Favoritar</button><button class="ghost" id="rave">◉ Rave</button></div><div id="episodes"></div><p class="tiny">A opção Rave abre o serviço oficial; a reprodução depende dos serviços que o aplicativo suporta. O CineWave não controla o aplicativo.</p></div>
+</article></div>
+
+<div class="toast" id="toast"></div>
+<footer>© 2026 CineWave 2.0 • Interface demonstrativa</footer>
+<script src="script.js"></script>
+</body></html>
