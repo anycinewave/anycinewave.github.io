@@ -1,42 +1,134 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="CineWave 2.0 — catálogo de filmes e séries licenciados, de domínio público ou de acesso autorizado.">
-<title>anystar</title><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="nav">
-  <a class="brand" href="#home">anystar
-  <nav><a href="#home">Início</a><a href="#movies">Filmes</a><a href="#series">Séries</a><a href="#favorites">♡ Favoritos</a></nav>
-  <button id="searchOpen" class="round">⌕</button><button id="theme" class="round">☼</button>
-</header>
+[
+  {
+let catalog=[],selected=null,filter="todos";
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const favs=()=>JSON.parse(localStorage.getItem("cinewave-favs")||"[]");
+const saveFavs=x=>localStorage.setItem("cinewave-favs",JSON.stringify(x));
 
-<main id="home">
-<section class="hero">
- <div class="hero-copy">
-  <span class="pill">CINEWAVE ORIGINAL • 2.0</span>
-  <h1>Seu próximo<br><em>filme favorito.</em></h1>
-  <p>Descubra conteúdos que você pode assistir de forma autorizada, com uma experiência inspirada nas grandes plataformas de streaming.</p>
-  <div><button class="cta" id="heroWatch">▶ Explorar</button><button class="ghost" id="heroInfo">ⓘ Como funciona</button></div>
- </div>
-</section>
+function card(x){
+  const e=document.createElement("article");
+  e.className="card"; e.style.setProperty("--a",x.color||"#5b3b9e");
+  e.innerHTML=`<div class="poster"><b>${escapeHtml(x.title)}</b></div>
+    <div class="card-body"><strong>${escapeHtml(x.title)}</strong>
+    <div class="meta">${x.type==="serie"?"Série":"Filme"} • ${x.year||"—"}</div></div>`;
+  e.onclick=()=>openDetail(x);
+  return e;
+}
+function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function renderRail(id,items){let r=$(id);r.innerHTML="";items.forEach(x=>r.appendChild(card(x)))}
+function render(){
+  renderRail("#movieRail",catalog.filter(x=>x.type==="filme"));
+  renderRail("#seriesRail",catalog.filter(x=>x.type==="serie"));
+  const fs=favs(); renderRail("#favRail",catalog.filter(x=>fs.includes(x.id)));
+  $("#noFav").style.display=fs.length?"none":"block";
+}
 
-<section class="section" id="movies"><div class="section-head"><div><small>CATÁLOGO</small><h2>Filmes em destaque</h2></div><button class="see" data-jump="filme">Ver todos →</button></div><div class="rail" id="movieRail"></div></section>
-<section class="section"><div class="section-head"><div><small>PARA DESCOBRIR</small><h2>Por categoria</h2></div></div><div class="chips" id="chips"></div></section>
-<section class="section" id="series"><div class="section-head"><div><small>EPISÓDIOS</small><h2>Séries</h2></div><button class="see" data-jump="serie">Ver todas →</button></div><div class="rail" id="seriesRail"></div></section>
-<section class="section" id="favorites"><div class="section-head"><div><small>SUA LISTA</small><h2>Favoritos</h2></div></div><div class="rail" id="favRail"></div><p class="muted" id="noFav">Você ainda não adicionou favoritos.</p></section>
-<section class="about"><div><small>IMPORTANTE</small><h2>Um catálogo feito para conteúdos autorizados.</h2></div><p>O CineWave é uma interface estática. Use somente vídeos, capas e informações que você tenha autorização para publicar, conteúdo de domínio público ou licenças compatíveis. O site não fornece cópias não autorizadas de filmes ou séries.</p></section>
-</main>
+function openDetail(x){
+  selected=x;
+  $("#detailPoster").style.setProperty("--a",x.color||"#5b3b9e");
+  $("#detailPoster").textContent=x.title;
+  $("#detailTitle").textContent=x.title;
+  $("#detailType").textContent=x.type==="serie"?"SÉRIE":"FILME";
 
-<div class="search-panel" id="searchPanel"><div class="search-inner"><button id="searchClose">×</button><input id="search" autofocus placeholder="Pesquisar filmes e séries..."><div id="results"></div></div></div>
+  const rating=x.rating ?? x.score ?? x.avaliacao;
+  const genre=Array.isArray(x.genres)?x.genres.join(" • "):(x.genre||"—");
+  const ratingText=rating!==undefined && rating!==null && rating!=="" ? `⭐ ${rating}` : "⭐ —";
+  $("#detailMeta").textContent=`${ratingText}   •   📅 ${x.year||"—"}   •   🎭 ${genre}`;
 
-<div class="modal" id="modal"><div class="backdrop"></div><article class="detail">
-<button class="close" id="close">×</button><div class="detail-poster" id="detailPoster"></div>
-<div class="detail-copy"><small id="detailType"></small><h2 id="detailTitle"></h2><div class="meta" id="detailMeta"></div><p id="detailDesc"></p><div class="actions"><button class="cta" id="watch">▶ Assistir</button><button class="ghost" id="fav">♡ Favoritar</button><button class="ghost" id="rave">◉ Rave</button></div><div id="episodes"></div><p class="tiny">A opção Rave abre o serviço oficial; a reprodução depende dos serviços que o aplicativo suporta. O CineWave não controla o aplicativo.</p></div>
-</article></div>
+  $("#detailDesc").textContent=x.desc||"";
+  $("#modal").classList.add("open");
 
-<div class="toast" id="toast"></div>
-<footer>© 2026 CineWave 2.0 • Interface demonstrativa</footer>
-<script src="script.js"></script>
-</body></html>
+  const f=favs();
+  $("#fav").textContent=f.includes(x.id)?"♥ Remover":"♡ Favoritar";
+
+  const ep=$("#episodes"); ep.innerHTML="";
+  if(x.episodes){
+    ep.innerHTML="<h3>Episódios</h3>";
+    x.episodes.forEach(a=>{
+      const b=document.createElement("div");
+      b.className="episode";
+      b.textContent=`Temporada ${a.season} • Episódio ${a.ep} — ${a.title}`;
+      b.onclick=()=>play(a.url,a.title);
+      ep.appendChild(b);
+    });
+  }
+}
+
+function play(url,title){
+  if(!url){toast("Este título não possui uma URL de reprodução autorizada no catálogo.");return}
+  window.open(url,"_blank","noopener,noreferrer");
+}
+
+function openRave(title){
+  // Prefer a platform-provided deep link if one is present in the catalog.
+  // Never request or store Rave credentials.
+  const deepLink=selected?.raveUrl || selected?.rave_url || "";
+  if(deepLink){
+    window.location.href=deepLink;
+    setTimeout(()=>window.open("https://rave.io/","_blank","noopener,noreferrer"),900);
+    return;
+  }
+  if(navigator.clipboard) navigator.clipboard.writeText(title).catch(()=>{});
+  // Without an official deep link supplied by Rave, a website cannot
+  // reliably create a room or log the user into the app.
+  window.location.href="rave://";
+  setTimeout(()=>{
+    window.open("https://rave.io/","_blank","noopener,noreferrer");
+    toast("O app Rave foi solicitado. Se não abrir, use o aplicativo instalado e procure o título.");
+  },1000);
+}
+
+function toast(t){$("#toast").textContent=t;$("#toast").style.display="block";setTimeout(()=>$("#toast").style.display="none",2300)}
+
+$("#watch").onclick=()=>selected&&play(selected.url,selected.title);
+$("#rave").onclick=()=>selected&&openRave(selected.title);
+$("#fav").onclick=()=>{
+  let f=favs();
+  if(f.includes(selected.id))f=f.filter(x=>x!==selected.id);else f.push(selected.id);
+  saveFavs(f); $("#fav").textContent=f.includes(selected.id)?"♥ Remover":"♡ Favoritar";
+  render(); toast(f.includes(selected.id)?"Adicionado aos favoritos":"Removido dos favoritos");
+};
+
+$("#close").onclick=()=>$("#modal").classList.remove("open");
+$(".backdrop").onclick=()=>$("#modal").classList.remove("open");
+$("#theme").onclick=()=>document.body.classList.toggle("light");
+
+$("#searchOpen").onclick=()=>{$("#searchPanel").classList.add("open");$("#search").focus()};
+$("#searchClose").onclick=()=>$("#searchPanel").classList.remove("open");
+$("#search").oninput=e=>{
+  const q=e.target.value.toLowerCase().trim(),r=$("#results"); r.innerHTML="";
+  catalog.filter(x=>
+    x.title.toLowerCase().includes(q) ||
+    (x.genres||[]).some(g=>g.toLowerCase().includes(q))
+  ).forEach(x=>{
+    const d=document.createElement("div");d.className="result";
+    d.innerHTML=`<b>${escapeHtml(x.title)}</b><div class="meta">${x.type} • ${x.year||"—"}</div>`;
+    d.onclick=()=>{$("#searchPanel").classList.remove("open");openDetail(x)};
+    r.appendChild(d);
+  });
+};
+
+$("#heroWatch").onclick=()=>document.querySelector("#movies").scrollIntoView();
+$("#heroInfo").onclick=()=>toast("Escolha um título para ver as opções de reprodução autorizada.");
+
+$$(".see").forEach(b=>b.onclick=()=>{
+  const t=b.dataset.jump,arr=catalog.filter(x=>x.type===t);
+  toast(`${arr.length} ${t==="filme"?"filmes":"séries"} no catálogo.`);
+  (t==="filme"?$("#movies"):$("#series")).scrollIntoView();
+});
+
+fetch("data/catalog.json").then(r=>r.json()).then(d=>{
+  catalog=d;
+  render();
+  const genres=[...new Set(catalog.flatMap(x=>x.genres||[]))];
+  genres.forEach(g=>{
+    const b=document.createElement("button");b.className="chip";b.textContent=g;
+    b.onclick=()=>{
+      const arr=catalog.filter(x=>(x.genres||[]).includes(g));
+      renderRail("#movieRail",arr.filter(x=>x.type==="filme"));
+      renderRail("#seriesRail",arr.filter(x=>x.type==="serie"));
+      toast(`${arr.length} título(s) em ${g}`);
+    };
+    $("#chips").appendChild(b);
+  });
+}).catch(()=>toast("Não foi possível carregar o catálogo."));
