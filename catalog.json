@@ -1,110 +1,95 @@
-[
+[[
   {
-    "id": "m1",
-    "title": "A Viagem à Lua",
-    "type": "filme",
-    "year": 1902,
-    "genres": [
-      "Clássico"
-    ],
-    "desc": "Clássico pioneiro do cinema. Use uma fonte cuja situação de direitos permita a publicação no seu território.",
-    "url": "https://archive.org/details/LeVoyageDansLaLune",
-    "color": "#4c356c"
+    "id": "os-escolhidos",
+    "title": "Os Escolhidos",
+    "type": "movie",
+    "watchUrl": "https://www.primevideo.com/-/pt/detail/0JP4HUHQDF8527NMR1E7YK31LV?tr=cl"
   },
   {
-    "id": "m2",
-    "title": "The General",
-    "type": "filme",
-    "year": 1926,
-    "genres": [
-      "Clássico",
-      "Comédia"
-    ],
-    "desc": "Clássico de Buster Keaton. Confirme a situação de direitos e os termos da fonte antes de redistribuir ou incorporar.",
-    "url": "https://archive.org/details/the-general-1926",
-    "color": "#65443d"
-  },
-  {
-    "id": "m3",
-    "title": "Big Buck Bunny",
-    "type": "filme",
-    "year": 2008,
-    "genres": [
-      "Animação"
-    ],
-    "desc": "Animação do Blender distribuída sob licença Creative Commons. Verifique os termos da licença para a forma de uso desejada.",
-    "url": "https://peach.blender.org/",
-    "color": "#3d634a"
-  },
-  {
-    "id": "m4",
-    "title": "Elephants Dream",
-    "type": "filme",
-    "year": 2006,
-    "genres": [
-      "Animação"
-    ],
-    "desc": "Projeto de animação do Blender lançado como conteúdo aberto. Confira a licença antes de republicar.",
-    "url": "https://orange.blender.org/",
-    "color": "#765239"
-  },
-  {
-    "id": "s1",
-    "title": "Minha Série Livre",
-    "type": "serie",
+    "id": "um-grude-de-amor",
+    "title": "Um Grude de Amor",
+    "type": "series",
     "year": 2026,
-    "genres": [
-      "Série"
-    ],
-    "desc": "Modelo para cadastrar uma série própria ou licenciada.",
-    "url": "",
-    "color": "#3b4e78",
-    "episodes": [
-      {
-        "season": 1,
-        "ep": 1,
-        "title": "Piloto",
-        "url": ""
-      },
-      {
-        "season": 1,
-        "ep": 2,
-        "title": "O começo",
-        "url": ""
-      },
-      {
-        "season": 2,
-        "ep": 1,
-        "title": "Novo capítulo",
-        "url": ""
-      }
-    ]
+    "episodes": 12,
+    "watchUrl": "https://www.netflix.com/br/title/82048302"
   },
   {
-    "id": "s2",
-    "title": "Série de Demonstração",
-    "type": "serie",
-    "year": 2026,
-    "genres": [
-      "Série",
-      "Animação"
-    ],
-    "desc": "Exemplo de estrutura de temporadas e episódios.",
-    "url": "",
-    "color": "#64456e",
-    "episodes": [
-      {
-        "season": 1,
-        "ep": 1,
-        "title": "Episódio 1",
-        "url": ""
-      },
-      {
-        "season": 1,
-        "ep": 2,
-        "title": "Episódio 2",
-        "url": ""
-      }
-    ]
+    "id": "o-bad-boy-e-eu",
+    "title": "O Bad Boy e Eu",
+    "type": "movie",
+    "year": 2024,
+    "watchUrl": "https://br.justwatch.com/br/filme/sidelined-the-qb-and-me"
+  },
+  {
+    "id": "o-bad-boy-e-eu-2",
+    "title": "O Bad Boy e Eu 2",
+    "type": "movie",
+    "year": 2025,
+    "originalTitle": "Sidelined 2: Intercepted",
+    "watchUrl": "https://br.justwatch.com/br/filme/outro-amor-fora-do-tempo"
+  },
+  {
+    "id": "uma-noite-de-crime",
+    "title": "Uma Noite de Crime",
+    "type": "movie",
+    "year": 2013,
+    "watchUrl": "https://br.justwatch.com/br/filme/the-purge"
+  },
+  {
+    "id": "uma-noite-de-crime-anarquia",
+    "title": "A Purga: Anarquia",
+    "type": "movie",
+    "year": 2014,
+    "watchUrl": "https://br.justwatch.com/br/filme/the-purge-anarchy"
+  },
+  {
+    "id": "uma-noite-de-crime-ano-de-eleicoes",
+    "title": "A Purga: Ano de Eleições",
+    "type": "movie",
+    "year": 2016,
+    "watchUrl": "https://br.justwatch.com/br/filme/the-purge-election-year"
+  },
+  {
+    "id": "a-primeira-purga",
+    "title": "A Primeira Purga",
+    "type": "movie",
+    "year": 2018,
+    "watchUrl": "https://br.justwatch.com/br/filme/a-purga-inicio"
+  },
+  {
+    "id": "uma-noite-de-crime-adeus-america",
+    "title": "A Purga: Adeus América",
+    "type": "movie",
+    "year": 2021,
+    "watchUrl": "https://br.justwatch.com/br/filme/the-forever-purge"
+  },
+  {
+    "id": "maze-runner-correr-ou-morrer",
+    "title": "Maze Runner: Correr ou Morrer",
+    "type": "movie",
+    "year": 2014,
+    "watchUrl": "https://br.justwatch.com/br/filme/maze-runner-correr-ou-morrer"
+  },
+  {
+    "id": "maze-runner-prova-de-fogo",
+    "title": "Maze Runner: Prova de Fogo",
+    "type": "movie",
+    "year": 2015,
+    "watchUrl": "https://br.justwatch.com/br/filme/maze-runner-prova-de-fogo"
+  },
+  {
+    "id": "maze-runner-a-cura-mortal",
+    "title": "Maze Runner: A Cura Mortal",
+    "type": "movie",
+    "year": 2018,
+    "watchUrl": "https://br.justwatch.com/br/filme/maze-runner-a-cura-mortal"
+  },
+  {
+    "id": "exterminio-2",
+    "title": "Extermínio 2",
+    "type": "movie",
+    "year": 2007,
+    "originalTitle": "28 Weeks Later",
+    "watchUrl": "https://br.justwatch.com/br/filme/exterminio-2"
   }
 ]
